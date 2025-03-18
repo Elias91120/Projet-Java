@@ -1,0 +1,202 @@
+/* 🌑 Mode sombre global */
+.root {
+    -fx-background-image: url('https://4kwallpapers.com/images/wallpapers/windows-11-purple-abstract-dark-background-dark-purple-dark-3840x2400-8995.png');
+    -fx-background-size: cover; /* Couvre tout l’écran */
+    -fx-background-position: center; /* Centre l’image */
+    -fx-background-repeat: no-repeat; /* Empêche la répétition */    -fx-text-fill: white;
+    -fx-padding: 20px;
+    -fx-font-family: "Arial";
+}
+
+/* 📝 Champs de texte */
+.text-field {
+    -fx-background-color: #121212;
+    -fx-pref-width: 100%;
+    -fx-max-width: 400px;
+    -fx-padding: 10px;
+    -fx-border-color: #BB86FC;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused {
+    -fx-background-image: url('wallpaper.gif');
+    -fx-border-color: #6200EE;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #6200EE, 5, 0, 0, 2);
+}
+
+/* 🎨 Boutons */
+.button {
+    -fx-background-color: #1F1F1F;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 12px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-border-color: #BB86FC;
+    -fx-border-width: 2px;
+    -fx-transition: all 0.3s;
+}
+
+/* 🌟 Effet au survol : image de fond */
+.button:hover {
+    -fx-background-image: url('wallpaper.gif'); /* Image en arrière-plan */
+    -fx-background-size: cover; /* L'image couvre entièrement le bouton */
+    -fx-background-position: center; /* Centre l'image */
+    -fx-text-fill: white; /* Rendre le texte bien visible */
+    -fx-effect: dropshadow(gaussian, #BB86FC, 10, 0, 0, 2);
+}
+
+/* ✅ Bouton enfoncé */
+.button:pressed {
+    -fx-background-color: #6200EE;
+    -fx-text-fill: white;
+}
+
+/* 📋 TableView */
+.table-view {
+    -fx-fixed-cell-size: 40px; /* ✅ Hauteur des cellules uniforme */
+    -fx-background-color: #1E1E1E; 
+    -fx-border-color: #BB86FC; 
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-pref-height: 400px;
+    -fx-min-height: 300px;
+}
+
+.table-column {
+    -fx-alignment: CENTER-LEFT; /* ✅ Assure que toutes les colonnes sont alignées */
+    -fx-pref-width: 150px; /* ✅ Définir une largeur uniforme */
+}
+
+/* ✅ Correction spécifique pour chaque colonne */
+#colId {
+    -fx-pref-width: 60px;
+    -fx-alignment: CENTER;
+}
+
+#colName {
+    -fx-pref-width: 200px;
+    -fx-alignment: CENTER-LEFT;
+}
+
+#colEmail {
+    -fx-pref-width: 250px;
+    -fx-alignment: CENTER-LEFT;
+}
+
+#createdAtColumn, #updatedAtColumn {
+    -fx-pref-width: 150px;
+    -fx-alignment: CENTER; /* ✅ Centrer les dates */
+}
+
+/* 📌 En-tête du tableau */
+.table-view .column-header {
+    -fx-background-color: #6200EE; /* Violet intense */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px; /* Agrandir le texte */
+    -fx-alignment: CENTER;
+    -fx-border-color: transparent;
+}
+
+/* ✅ Ajustement de la hauteur des lignes */
+.table-row-cell {
+    -fx-cell-size: 70px; /* ✅ Augmenter encore la hauteur */
+    -fx-padding: 12px; /* ✅ Ajouter plus d'espace intérieur */
+    -fx-background-color: #1E1E1E; 
+    -fx-border-color: #BB86FC; 
+}
+
+/* ✅ Forcer le texte en blanc et augmenter la taille */
+.table-cell {
+    -fx-text-fill: white !important;
+    -fx-font-size: 16px;
+    -fx-wrap-text: true;
+    -fx-padding: 5px;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Alternance des lignes pour une meilleure lisibilité */
+.table-row-cell:odd {
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: white; /* ✅ Texte blanc forcé */
+}
+
+/* ✅ Texte bien visible même quand sélectionné */
+.table-row-cell:selected {
+    -fx-background-color: #BB86FC; /* Violet pour la sélection */
+    -fx-text-fill: black; /* Noir pour un bon contraste */
+    -fx-font-weight: bold; /* Texte en gras */
+}
+
+/* Effet au survol */
+.table-row-cell:hover {
+    -fx-background-color: #3700B3; /* Bleu foncé */
+    -fx-text-fill: white; /* ✅ Texte blanc même au survol */
+}
+
+/* ✅ Ajustement du texte pour éviter la coupure */
+.table-row-cell {
+    -fx-cell-size: 70px;
+    -fx-padding: 12px;
+    -fx-background-color: #1E1E1E;
+    -fx-border-color: #BB86FC;
+}
+
+/* ✅ Si nécessaire, forcer aussi la transparence des autres éléments */
+.text-field, .button, .table-view, .table-row-cell {
+    -fx-background-color: rgba(30, 30, 30, 0.8); /* ✅ Rend tout semi-transparent */
+}
+
+/* 🌑 Forcer la transparence du fond */
+.anchorpane, .vbox, .hbox, .pane, .grid-pane {
+    -fx-background-color: transparent !important; /* ✅ Forcer la transparence */
+}
+
+/* 📌 Layout des boutons */
+.hbox {
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+}
+
+/* 🎯 Centrer les éléments */
+.vbox {
+    -fx-alignment: center;
+}
+
+/* 🎭 Labels */
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* 🖼️ Images (ex: photos de profil) */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.3), 10, 0, 0, 3);
+    -fx-background-radius: 50%;
+}
+
+/* 🖤 Fond noir partout */
+.root, .anchor-pane, .vbox, .hbox, .pane {
+    -fx-background-color: #121212 !important; /* Forcer le mode sombre */
+}
+
+/* ✅ Si nécessaire, forcer aussi la transparence des autres éléments */
+.text-field, .button, .table-view, .table-row-cell {
+    -fx-background-color: rgba(30, 30, 30, 0.8); /* ✅ Rend tout semi-transparent */
+}
+
+
+/* 🖼️ Supprimer les marges blanches */
+.anchor-pane, .vbox {
+    -fx-padding: 0;
+    -fx-margin: 0;
+}

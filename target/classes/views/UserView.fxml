@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER" fx:controller="application.UserController"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      prefWidth="900" style="-fx-padding: 20px;">
+
+    <!-- ✅ Titre de la page -->
+    <Label text="Gestion des utilisateurs - Elias Elloumi"
+           style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold; -fx-alignment: CENTER;"
+           alignment="CENTER"/>
+
+    <!-- ✅ Affichage du nombre total d’utilisateurs -->
+    <Label fx:id="userCountLabel" text="Nombre total d’utilisateurs : 0"
+           style="-fx-font-size: 16px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+    <!-- Carte contenant les champs de saisie -->
+    <StackPane style="-fx-border-color: #cccccc; -fx-border-radius: 10px; -fx-padding: 20px; 
+                      -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.3, 0, 4);">
+        <VBox spacing="10" alignment="CENTER">
+            <TextField fx:id="nameField" promptText="Nom" prefWidth="300"/>
+            <TextField fx:id="emailField" promptText="Email" prefWidth="300"/>
+        </VBox>
+    </StackPane>
+
+    <!-- Boutons centrés -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Ajouter" fx:id="addUserBtn" onAction="#addUser"/>
+        <Button text="Mettre à jour" fx:id="updateUserBtn" onAction="#updateUser"/>
+        <Button text="Supprimer" fx:id="deleteUserBtn" onAction="#deleteUser"/>
+    </HBox>
+
+    <!-- Barre de recherche avec "Réinitialiser" -->
+    <HBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+        <TextField fx:id="searchField" promptText="Rechercher par nom ou email" 
+                   prefHeight="40" style="-fx-font-size: 14px;" HBox.hgrow="ALWAYS"/>
+        <Button text="Rechercher" onAction="#searchUser"/>
+        <Button text="Réinitialiser" onAction="#resetSearch"/>
+    </HBox>
+
+    <!-- Conteneur pour le tableau -->
+    <HBox alignment="CENTER">
+<TableView fx:id="userTable" prefWidth="900" prefHeight="400">
+    <columns>
+        <TableColumn text="ID" fx:id="colId" minWidth="60"/>
+        <TableColumn text="Nom" fx:id="colName" minWidth="200"/>
+        <TableColumn text="Email" fx:id="colEmail" minWidth="250"/>
+        <TableColumn text="Créé le" fx:id="createdAtColumn" minWidth="180"/>
+        <TableColumn text="Mis à jour le" fx:id="updatedAtColumn" minWidth="180"/>
+        <TableColumn text="Langue" fx:id="language" minWidth="180"/>
+    </columns>
+</TableView>
+
+    </HBox>
+
+</VBox>
